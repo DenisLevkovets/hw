@@ -13,4 +13,6 @@ int getop(char []);
 int getch(void);
 void ungetch(int);
 
+double main_fun(char s[]);
+
 #endif //UNTITLED_CALC_H

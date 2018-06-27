@@ -3,18 +3,18 @@
 //
 #include <stdio.h>
 #include "calc.h"
-#define MAXVAL 100
+#define MAXVAL 2
 
 static int sp = 0;
 
 static double val[MAXVAL];
 
-void push(double f){
+void pushp(double f){
     if(sp<MAXVAL) val[sp++]=f;
     else printf("error: stack full, can't push %g\n", f);
 }
 
-double pop(void){
+double pops(void){
     if(sp>0) return val[--sp];
     else{
         printf("error: stack is empty\n");

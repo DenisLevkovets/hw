@@ -2,14 +2,10 @@
 #include <stdlib.h>
 #include "calc.h"
 
-#define MAXOP 100
+double main_fun(char s[]){
 
-
-int main(){
     int type;
     double  op2;
-    char s[MAXOP];
-
 
     while ((type = getop(s)) != EOF){
         switch (type){
@@ -32,13 +28,14 @@ int main(){
                 else printf("error: zero division\n");
                 break;
             case '\n':
-                printf("\t%.8g\n",pop());
+                return pop();
                 break;
             default:
                 printf("error: unknown command %s\n", s);
                 break;
         }
     }
+
 
     return 0;
 }

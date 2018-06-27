@@ -1,10 +1,12 @@
-# cmake_minimum_required(VERSION <specify CMake version here>)
-project(untitled C)
+cmake_minimum_required(VERSION 3.8)
+project(calculator)
 
-set(CMAKE_C_STANDARD 99)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -Wall -Wextra -Wshadow")
 
-add_executable(untitled src/main.c)
-add_executable(untitled src/getch.c)
-add_executable(untitled src/getop.c)
-add_executable(untitled src/stack.c)
-add_executable(untitled src/calc.h)
+set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -O0 -g")
+
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMakeModules/")
+
+enable_testing()
+
+add_subdirectory(tests)
